@@ -2,7 +2,7 @@
 <!--
  DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 
- Copyright (c) 2011-2013 ForgeRock AS. All rights reserved.
+ Copyright (c) 2011-2015 ForgeRock AS. All rights reserved.
 
  The contents of this file are subject to the terms
  of the Common Development and Distribution License
@@ -10,13 +10,13 @@
  compliance with the License.
 
  You can obtain a copy of the License at
- http://forgerock.org/license/CDDLv1.0.html
+ http://opensource.org/licenses/CDDL-1.0
  See the License for the specific language governing
  permission and limitations under the License.
 
  When distributing Covered Code, include this CDDL
  Header Notice in each file and include the License file
- at http://forgerock.org/license/CDDLv1.0.html
+ at http://opensource.org/licenses/CDDL-1.0
  If applicable, add the following below the CDDL Header,
  with the fields enclosed by brackets [] replaced by
  your own identifying information:
@@ -27,7 +27,7 @@
     <parent>
         <groupId>org.forgerock.openicf.connectors</groupId>
         <artifactId>connectors-parent</artifactId>
-        <version>1.1.2.0-SNAPSHOT</version>
+        <version>1.5.0.0-SNAPSHOT</version>
     </parent>
     <groupId>org.forgerock.openicf.connectors</groupId>
     <artifactId>db2-connector</artifactId>
@@ -42,19 +42,18 @@
     </issueManagement>
     <ciManagement>
         <system>jenkins</system>
-        <url>http://builds.forgerock.org/job/OpenICF - DB2 Connector</url>
+        <url>https://ci.forgerock.org/view/OpenICF/job/OpenICF - db2-connector - postcommit/</url>
     </ciManagement>
     <scm>
-        <connection>scm:svn:https://svn.forgerock.org/openicf/trunk/connectors/java/db2</connection>
-        <developerConnection>scm:svn:https://svn.forgerock.org/openicf/trunk/connectors/java/db2</developerConnection>
-        <url>http://sources.forgerock.org/browse/openicf/trunk/connectors/java/db2</url>
+        <connection>scm:git:ssh://git@stash.forgerock.org:7999/openicf/db2-connector.git</connection>
+        <developerConnection>scm:git:ssh://git@stash.forgerock.org:7999/openicf/db2-connector.git</developerConnection>
+        <url>http://stash.forgerock.org/projects/OPENICF/repos/db2-connector/browse/</url>
     </scm>
     <properties>
         <connectorPackage>org.identityconnectors.db2</connectorPackage>
         <connectorClass>DB2Connector</connectorClass>
-        <jira.componentIds>10175</jira.componentIds>
-        <jira.versionPrefix>${project.artifactId}</jira.versionPrefix>
-        <jira.fixVersionIds>0</jira.fixVersionIds>
+        <framework.compatibilityVersion>1.1</framework.compatibilityVersion>
+        <framework.releaseVersion>2.0</framework.releaseVersion>
     </properties>
     <repositories>
         <repository>
@@ -76,12 +75,36 @@
     </repositories>
     <dependencies>
         <dependency>
+            <groupId>org.forgerock.openicf.framework</groupId>
+            <artifactId>connector-framework</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.forgerock.openicf.misc</groupId>
             <artifactId>dbcommon</artifactId>
             <version>1.1.1.0-SNAPSHOT</version>
         </dependency>
 
         <!-- Test Dependencies -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.forgerock.openicf.framework</groupId>
+            <artifactId>connector-framework-internal</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.forgerock.openicf.framework</groupId>
+            <artifactId>connector-test-common</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <scope>test</scope>
+        </dependency>
         <!--
         Install the DB2 Driver into local maven repository
         mvn install:install-file -Dfile=db2jcc.jar -DgroupId=com.ibm.db2 -DartifactId=db2jcc -Dversion=10.5 -Dpackaging=jar -DgeneratePom=true -DcreateChecksum=true
@@ -128,13 +151,6 @@
                         </goals>
                     </execution>
                 </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.forgerock.openicf.misc</groupId>
-                        <artifactId>dbcommon</artifactId>
-                        <version>1.1.1.0-SNAPSHOT</version>
-                    </dependency>
-                </dependencies>
             </plugin>
         </plugins>
     </build>
