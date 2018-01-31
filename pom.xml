@@ -34,19 +34,15 @@
     <packaging>bundle</packaging>
     <name>DB2 Connector</name>
     <description>Uses plain JDBC calls to execute provisioning operations on DB2 resource. Tested with type4 and type2 JCC driver and with older type2 CLI driver.</description>
-    <url>https://openicf.forgerock.org/connectors/db2-connector</url>
+    <url>https://github.com/ForgeRock/openicf-db2-connector</url>
     <issueManagement>
-        <system>jira</system>
-        <url>https://bugster.forgerock.org/jira/browse/OPENICF/component/10175</url>
+        <system>github</system>
+        <url>https://github.com/ForgeRock/openicf-db2-connector/issues</url>
     </issueManagement>
-    <ciManagement>
-        <system>jenkins</system>
-        <url>https://ci.forgerock.org/view/OpenICF/job/OpenICF - db2-connector - postcommit/</url>
-    </ciManagement>
     <scm>
-        <connection>scm:git:ssh://git@stash.forgerock.org:7999/openicf/db2-connector.git</connection>
-        <developerConnection>scm:git:ssh://git@stash.forgerock.org:7999/openicf/db2-connector.git</developerConnection>
-        <url>http://stash.forgerock.org/projects/OPENICF/repos/db2-connector/browse/</url>
+        <connection>scm:git:git@github.com:forgerock/openicf-db2-connector.git</connection>
+        <developerConnection>scm:git:git@github.com:forgerock/openicf-db2-connector.git</developerConnection>
+        <url>scm:git:git@github.com:forgerock/openicf-db2-connector.git</url>
     </scm>
     <properties>
         <connectorPackage>org.identityconnectors.db2</connectorPackage>
@@ -67,9 +63,9 @@
             <id>forgerock-private-releases</id>
             <name>ForgeRock Private Releases Repository</name>
             <url>http://maven.forgerock.org/repo/private-releases</url>
-            <releases>
+            <snapshots>
                 <enabled>false</enabled>
-            </releases>
+            </snapshots>
         </repository>
     </repositories>
     <dependencies>
