@@ -19,10 +19,16 @@
 
 An OpenICF connector built to work with the [ForgeRock Identity Management Provisioning System]
 (https://www.forgerock.com/platform/identity-management/identity-provisioning). This connector allows the ForgeRock 
-Identity Platform to provision users to an IBM DB2 database. 
+Identity Platform to provision users to an IBM DB2 database.
 
 **NOTE:** This is a community connector and is made available so that customers with a ForgeRock subscription can build,
  develop or fork this repository. See the legal disclaimer bit below.
+ 
+## Compatability
+Works with [OpenICF 1.5](https://backstage.forgerock.com/docs/openicf/1.5/release-notes/index.html). Please read the release notes for more information on compatability with Java Connector Servers and version of OpenIDM/IDM.
+
+**NOTE** This code was written to work against DB2 version 9.1. The latest version (at time of writing in Feb 2018) is 11.1 so this code will need updating/testing.
+
 
 ## Building
 The code in this repository has binary dependencies that live in the ForgeRock maven repository. Maven can be configured
