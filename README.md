@@ -25,9 +25,11 @@ Identity Platform to provision users to an IBM DB2 database.
  develop or fork this repository. See the legal disclaimer bit below.
  
 ## Compatability
-Works with [OpenICF 1.5](https://backstage.forgerock.com/docs/openicf/1.5/release-notes/index.html). Please read the release notes for more information on compatability with Java Connector Servers and version of OpenIDM/IDM.
+Works with [OpenICF 1.5](https://backstage.forgerock.com/docs/openicf/1.5/release-notes/index.html). Please read the 
+release notes for more information on compatability with Java Connector Servers and version of OpenIDM/IDM.
 
-**NOTE** This code was written to work against DB2 version 9.1. The latest version (at time of writing in Feb 2018) is 11.1 so this code will need updating/testing.
+**NOTE** This code was written to work against DB2 version 9.1. The latest version (at time of writing in Feb 2018) is 
+11.1 so this code will need updating/testing.
 
 
 ## Building
@@ -41,7 +43,7 @@ This has been confirmed as buildin with Maven 3.3.3, Oracle JDK 1.8.0_91.
 
 ```
 $ git clone <repo_url>
-$ cd <repo_url>
+$ cd <repo_dir>
 $ mvn clean install
 ```
 
